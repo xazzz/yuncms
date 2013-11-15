@@ -1,0 +1,65 @@
+<script type="text/javascript"> 
+$(function(){
+	new slide("#main-slide","cur",310,280,1);//焦点图
+	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
+})
+</script>
+<div class="footer">
+  <div class="ft-info">
+{yun:content do="category" catid="1" num="15" order="listorder ASC"}
+{loop $data $r}
+<a href="{$r[url]}" target="_blank">{$r[catname]}</a> ┊  
+{/loop}
+{/yun}
+<a href="{SITE_URL}index.php?app=link" target="_blank">友情链接</a>
+  </div>
+    <p class="ft-copy">Powered by <strong><a href="http://www.yuncms.net" target="_blank">YUNCMS</a></strong> <em>{get_version(1)}</em> &copy; 2013{tjcode()}
+</p>
+
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".picbig").each(function(i){
+		var cur = $(this).find('.img-wrap').eq(0);
+		var w = cur.width();
+		var h = cur.height();
+	   $(this).find('.img-wrap img').LoadImage(true, w, h,'{IMG_PATH}msg_img/loading.gif');
+	});
+})
+</script>
+<a href="#" target="_self" id="toTop" title="返回顶部" onclick="window.scrollTo(0,0);return false" style="display: block; "></a>
+<!--[if lte IE 6]>
+<style type="text/css">
+html,body{overflow-x:hidden;}
+.layoutBg{background:#000;opacity:0.3;filter:alpha(opacity=30);}
+#arealife{position:absolute;top:0;right:0;}
+#topNav{position:absolute;top:0;left:0;}
+#toTop{position:absolute;right:15px;bottom:45px;}
+</style>
+<![endif]-->
+<!--[if lte IE 6]>
+<script type="text/javascript">
+function topFixed(){
+	if(document.documentElement.scrollTop > 400){
+		document.getElementById("toTop").style.display = "block";
+	}else{
+		document.getElementById("toTop").style.display = "none";
+	}
+	document.getElementById("topNav").style.top = document.documentElement.scrollTop + "px";
+	document.getElementById("toTop").style.top = (document.documentElement.clientHeight + document.documentElement.scrollTop - document.getElementById("toTop").clientHeight - 45) + "px";
+	document.getElementById("login_div").style.top = (document.documentElement.clientHeight/2 + document.documentElement.scrollTop) + "px";
+	if(document.getElementById("videoCommentLayout")){
+		document.getElementById("videoCommentLayout").style.top = (document.documentElement.clientHeight/2 + document.documentElement.scrollTop) + "px";
+	}
+}
+K(window).bind("scroll",function(){
+	topFixed();
+});
+K(window).bind("resize",function(){
+	topFixed();
+});
+K(function(){
+	topFixed();
+});
+</script>
+<![endif]-->

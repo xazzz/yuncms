@@ -1,0 +1,9 @@
+#
+# robots.txt for yuncms
+#
+User-agent: * 
+Disallow: /install
+Disallow: /data
+Disallow: /src
+Disallow: /framework
+Disallow: /admin.php

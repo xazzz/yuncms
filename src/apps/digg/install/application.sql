@@ -1,0 +1,1 @@
+INSERT INTO `yuncms_application` VALUES ('digg', '顶一下', '', '0', '2.0', '', '', '0', '0', '2011-05-18', '2013-05-18');

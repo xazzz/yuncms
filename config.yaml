@@ -1,0 +1,4 @@
+name: tintsoft
+version: 2
+handle:
+- rewrite:  if( !is_file() && !is_dir()) goto "index.php?%{QUERY_STRING}"

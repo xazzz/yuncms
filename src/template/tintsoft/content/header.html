@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link href="{$CSS_PATH}reset2013.css" rel="stylesheet" type="text/css" />
+<link href="{$CSS_PATH}system.css" rel="stylesheet" type="text/css" />
+<script src="{$JS_PATH}east.js"></script>
+<script src="{$JS_PATH}jquery.min.js"></script>
+<script src="{$JS_PATH}jquery.sgallery.js"></script>
+</head>
+<body>
+<div class="top-nav-wrap top-nav-wrap-fix">
+  <div class="top-nav">
+    <div class="tn-bg">
+      <div class="tn-header">
+        <div class="tn-nav">
+          <div class="tn-title" node-type="sethome">
+            <p class="tn-tab"><i>你好，欢迎访问天智软件！</i></p>
+          </div>
+          <div class="tn-title" node-type="menu"> <a href="" class="tn-tab"> <i>设为首页</i> </a></div>
+          <div class="tn-title"> <a target="_blank" href="" class="tn-tab"><i>WAP版</i> </a> </div>
+          <div class="tn-title" node-type="client"> <a target="_blank" class="tn-tab" > <i>帮助<em class="tn-new tn-new2" style="display: none; /* display: inline-block; */"></em> <span class="tn-arrow"> </span></i> </a>
+            <div style="display: none;" class="tn-topmenulist tn-topmenulist-a tn-topmenulist-a-client">
+              <ul class="tn-text-list">
+                <li><a target="_blank" href="">反馈意见</a></li>
+                <li><a target="_blank" href="">帮助中心</a></li>
+                <li><a target="_blank" href="">新版介绍</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tn-person">
+          <div class="tn-title tn-title-login"> <a style="" href="" class="tn-tab" ><i>登录</i> </a></div>
+          <div class="tn-title"> <a target="_blank" href="" class="tn-tab"> <i>注册</i> </a></div>
+          <div class="tn-title"> <a target="_blank" href="" class="tn-tab"> <i>网站导航 </i> </a> </div>
+          <div class="tn-title"> <a target="_blank" href="" class="tn-tab"> <i>论坛</i> </a> </div>
+          <div class="tn-title"> <a target="_blank" href="{SITE_URL}index.php?app=content&controller=rss" class="tn-tab"> <i class="rss">RSS</i> </a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="top-search-wrap">
+  <div class="top-search-frame clearfix"> <a class="logo" href=""></a>
+    <div class="top-search clearfix">
+      <form name="SearchEcho" onsubmit="return SearchSubmit()">
+        <div class="sim-select clearfix">
+          <select style="display: none;" name="SerchType" id="slt_01" autocomplete="off">
+            <option value="新闻" selected="selected">新闻</option>
+            <option value="新闻">新闻</option>
+            <option value="图片">图片</option>
+            <option value="博客">博客</option>
+            <option value="视频">视频</option>
+            <option value="知识人">知识人</option>
+          </select>
+          <h3>新闻</h3>
+          <div class="v-line"></div>
+          <div class="sim-ul-flt" style="display: none; top: 33px; width: 72px;">
+            <div class="sim-ul-bg"></div>
+            <ul>
+              <li>新闻</li>
+              <li>图片</li>
+              <li>下载</li>
+              <li>视频</li>
+              <li><a href="" target="_blank">更多&gt;&gt;</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sim-select clearfix" style="display: none;">
+          <h3>微博</h3>
+          <div class="v-line"></div>
+        </div>
+        <div class="inp-txt-wrap">
+          <input type="text" value="请输入关键字" name="SerchKey" class="inp-txt" >
+        </div>
+        <input type="submit" name="SearchSubButton" class="submit-second-btn" value="">
+      </form>
+    </div>
+    <div class="now-wea-wrap clearfix"><a href="http://php.weather.sina.com.cn/search.php?city=北京&amp;dpc=1" target="_blank"><span class="now-wea-city">北京</span><span class="now-wea-i"><img width="19" height="19" src="http://i2.sinaimg.cn/dy/weather/images/yb2/20_20/duoyun_0.gif" title="多云"></span><span class="now-wea-st">多云</span><span class="now-wea-val">14～2℃</span></a></div>
+  </div>
+</div>
+<div class="navWrap">
+  <div class="nav" id="nav"  style="position: static; top: 0px;">
+    <div class="nav-Article clearfix">
+    	{yun:content do="category" catid="0" num="25" order="listorder ASC"}
+      <ul class="clearfix">
+        <li><a href="{SITE_URL}">首页</a></li>
+        {loop $data $r}
+        <li><a href="{$r[url]}">{$r[catname]}</a></li>
+       {/loop}
+      </ul>
+        {/yun}
+    </div>
+  </div>
+</div>

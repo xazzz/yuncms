@@ -1,0 +1,50 @@
+<style type="text/css">
+ .cont-mood{ border: 1px solid #ccc;  background-color: #fff; padding: 8px;overflow: hidden; zoom: 1; color: #666;margin-bottom: 10px; }
+ .cont-mood .mood-head{ margin-top:5px;margin-left:10px;margin-bottom: 10px;font-size: 12px;}
+ .cont-mood li{ float: left; margin-bottom: 12px; width: 10%; text-align: center; }
+ .cont-mood li input{ margin-top: 5px; }
+ .cont-mood li a{ }
+ .mood-list li{ background-image: none;}
+</style>
+<div id="mood" class="cont-mood">
+<p class="mood-head">你看到此篇文章的感受是：</p>
+<ul>
+{loop $setting $k $v}
+  <li><a onClick="javascript:vote('{$k}');return false;" href="javascript:;"><img src="{IMG_PATH}{$v[pic]}" title="{$v[name]}" /></a><br />{$v[name]}<br />
+  <input onClick="javascript:vote('{$k}');return false;" type="radio" name="moodradio" value="1" /></li>
+{/loop}
+</ul>
+</div>
+<script type="text/javascript">
+var votehtml= $('#mood').html();
+function vote(id) {
+	$.getJSON('{SITE_URL}index.php?app=mood&controller=index&action=post&id={$mood_id}&k='+id+'&'+Math.random()+'&callback=?', function(json){
+		if(json.status==1)	{
+			voteShow(json);
+		}else{
+			alert(json.msg);
+			voteShow(json);
+		}
+	})
+}
+
+function voteShow(json) {
+	$("#mood").html(votedhtml + '<ul class="clear">' + $("ul:last", "#mood").html() + '</ul>').hide().fadeIn(450 | "slow").find(':radio').remove();
+	$('#vote_total').html(json.total);
+	for(var i in json.data) {
+		$('#'+i+'_li em').html(json.data[i].number);
+		$('#'+i+'_bar').css({"height": json.data[i].height+'%'}); 
+	}
+}
+var votedhtml = '<style>\
+.mood_bar {position:relative; width:24px; height:100px;background:#EEF7F7; margin:0 auto;}\
+.mood_bar_in {background:url({IMG_PATH}mood/moodrank.gif) repeat-y -2px 0;bottom:0;left:0;position:absolute;width:24px;}\
+</style>\
+<p class="class="mood-head"">\
+已经有 <font color="red" id="vote_total"></font> 人表态：</h3>\
+	<ul id="clear layout">\{loop $setting $k $v}
+	<li id="n{$k}_li">\
+	<em></em><div class="mood_bar"><div class="mood_bar_in" id="n{$k}_bar"></div></div>\
+	</li>\{/loop}
+</ul>';
+</script>                                                        

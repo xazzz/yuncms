@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+/* 
+ *	********** 移除元素的   padding, margin  **********
+ */
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td, input, textarea {margin:0;padding:0;}
+html{background:url(../images/search/search_skin_bg.jpg) repeat-x 0 0}
+body { font-family:\5B8B\4F53,Arial Narrow,arial,serif; background-color: #fff;  font-size: 12px;font:12px/1.5 arial,\5b8b\4f53, sans-serif;position:relative}
+body{margin:0;width:auto;background:url(../images/search/search_skin.jpg) no-repeat center 0}
+img{border:none}
+
+/*Clear*/
+.clear{clear:both;font-size:1px;width:1px;height:1px;line-height:1px;visibility:hidden}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+* html .clearfix{height:1%}
+*+html .clearfix{min-height:1%}
+
+/*链接样式*/
+a{color:#0022CC;text-decoration:underline;outline:none}
+a:hover{color:#BA2636;text-decoration:underline}
+a.cred{font-family:\5b8b\4f53}
+a:link,a:visited{
+ text-decoration:none;  /*超链接无下划线*/
+}
+.so-top{padding:0 10px;font-size:14px;border-bottom:1px solid #CDE9FC;height:28px;line-height:26px;position:relative;}
+.so-top .bd{position:absolute;z-index:101;font-size: 12px;}
+.so-top a{float:left;margin:0 4px}
+.so-top .mask{display:block;width:100%;height:28px;background:#FFF;position:absolute;left:0;top:0;z-index:100;filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=25);opacity:0.25}
+.so-logo{margin:60px auto 0;text-align:center}
+.so-main{width:446px;padding:50px 0 15px;margin:0 auto;height: 280px;}
+.so-tab{height:32px;line-height:26px;font-size:12px;color:#999}
+.so-tab strong, .so-tab a{margin-right:16px;font-size:14px}
+.so-tab a{color:#049;text-decoration: none}
+.so-tab a.on{color:#333;font-weight:bold;}
+.so-input-ct{height:33px;line-height:32px;}
+.so-input-ct a{float:left;margin-left:10px;display:inline;}
+.so-key, .so-submit{float:left;background:url(../images/search/so_input.gif) no-repeat 0 0;vertical-align:middle;}
+.so-key{height:17px;width:360px;padding:8px 6px;font-size:14px;border:medium none;}
+.so-submit{margin-left:-1px;padding:0;width:75px;height:33px;background-position:-435px 0;border:medium none;}
+.so-submit-over{background-position:-510px 0;}
+.so-submit-click{background-position:-585px 0;}
+
+.sr_infoul{border:1px solid #91C0E3; padding:2px; width:365px;height: 240px;display: none;background: none repeat scroll 0 0 #FFFFFF;position: absolute;}
+.sr_infoul ul li{ height:24px; line-height:24px; text-align:left!important; color:#666;}
+.sr_infoul ul li a{display:block; color:#456!important;display:block; width:100%;text-decoration:none;}
+.sr_infoul ul li a:hover,.sr_infoul ul li.ac_over a{color:#FFF!important; background:#069; text-decoration:none;}
+
+.footer .links{border-top-width:0}
+.search-body .footer{width:auto;padding-top:15px}
+.search-body .footer .links{border-top-width:1px;}
+
+.search-body{background-position:-421px -120px}
+.so-header{height:70px;padding-top:5px}
+.search-body .so-key{width:420px}
+.so-logo-small{float:left;margin:30px 0 0;width:160px;text-align:center;}
+.so-list-body{margin-left:160px}
+
+.subform{padding:10px 0}
+.so-list{margin:10px 0;height:auto !important;height:280px;min-height:280px;}
+.so-list ul{margin-top:-5px;display:block;width:600px;list-style:none}
+.so-list ul li{margin:15px 0px}
+.so-list ul li a img{float:left; border:1px solid #ADCBE9; padding:2px; background:#FFF; margin-right:10px;}
+.so-list ul li a:hover img{background:#efefef;}
+.so-list h3{margin:0;padding:0;font-size:16px;letter-spacing:1px; font-weight:normal;/*font-weight:bold;*/}
+.so-list h3 a{}
+.so-list .desc{color:#000;font-size:13px; line-height:150%;}
+.so-list .url{font-size:12px;line-height:23px;color:#666;}
+.so-list .url a{color:#390;}
+.likewords{margin:15px 0px;padding:5px 20px;font-size:14px;background-color:#E5F0FB;line-height:24px;}
+.likewords h5.t{float:left;font-size:14px;margin:0 10px 0 0;padding:0}
+.likewords .bd{float:left;}
+.likewords td{padding-right:40px;white-space:nowrap}
+
+.so-left{float:left;padding:5px 0 0 10px;margin-top:25px;position:relative;width:150px}
+.so-left div{width:120px;overflow:hidden}
+.so-left ul{margin-bottom:10px;}
+.so-left li{padding:0 10px;height:22px;line-height:22px;overflow:hidden;text-indent:4px;color:#808080}
+.so-left .current{background:url(../images/search/so_trigger.gif) no-repeat 0 -172px}
+.so-left a{display:block;text-decoration:none;color:#0066CC}
+.so-left a:hover{background:#D1E5FC}
+.so-trigger{position:absolute;right:15px;top:5px}
+.so-trigger span{float:left;width:13px;height:156px;background:url(../images/search/so_trigger.gif) no-repeat 0 0;cursor:pointer;}
+.so-trigger .colse{background-position:-12px 0}
+
+.pager{text-align:left;font-size:14px;padding:10px 0 15px}
+.pager a{text-decoration:none;}
+.pager a, .pager strong{height:22px;line-height:20px;padding:3px 10px 0}
+.pager a:hover{color:#FFF;border-color:#0099CC;background-color:#0099FF}
+
+/* 页面底部  */
+#foot{ text-align: center; }
+#foot_link{ height: 30px; line-height: 30px;  }
+#foot_link a{ color: #000;}
+#foot_link a:hover{ color: #f00; }
+#foot p{ line-height: 22px; color: #666;}
+.footer{clear:both;width:960px;margin:0 auto;font-size:12px;padding:10px 0px 15px;text-align:center;line-height:150%;color:#333;text-align:center}
+.footer .links{padding-top:10px;border-top:1px solid #C6DDF1}
+.footer .links a{margin:0px 15px;line-height:30px;color:#039}
+.poweredby{padding-bottom:5px;color:black}
+.poweredby a{text-decoration:underline;font-weight:bold}

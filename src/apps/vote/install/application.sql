@@ -1,0 +1,1 @@
+INSERT INTO `yuncms_application` VALUES('vote', '投票', '', 0, '2.0', '', 'array (\n  ''default_style'' => ''default'',\n  ''vote_tp_template'' => ''vote_tp'',\n  ''allowguest'' => ''1'',\n  ''enabled'' => ''1'',\n  ''interval'' => ''0'',\n  ''credit'' => ''1'',\n)', 0, 0, '2010-09-06', '2013-09-06');
